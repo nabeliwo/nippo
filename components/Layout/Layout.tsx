@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import defaultConfig from '../../site.config.json'
 
-const baseUrl = process.env.NEXT_PUBLIC_HOST
+const baseUrl = process.env.NEXT_PUBLIC_HOST || 'http://localhost:3000'
 const image = `${baseUrl}/images/thumbnail.png`
 
 type Props = {
