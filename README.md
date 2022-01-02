@@ -1,5 +1,5 @@
 # nippo
 
-[nabeliwo](https://twitter.com/nabeliwo)'s daily report, named '人に見られると恥ずかしいのでインターネットに置いとくね'.
+[nabeliwo](https://twitter.com/nabeliwo)'s daily report, named 'nabeliwo nippo'.
 
 https://nippo.nabeliwo.com/
