@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.markdown > *:first-child {
+  @apply mt-0;
+}
+.markdown h2 {
+  @apply text-2xl mt-10 mb-3;
+}
+.markdown h2 + p,
+.markdown h2 + ul {
+  @apply mt-0;
+}
+.markdown h3 {
+  @apply text-xl mt-5 mb-2;
+}
+.markdown p {
+  @apply mt-4;
+}
+.markdown ul {
+  @apply mt-4 pl-6 list-disc;
+}
+.markdown ul ul,
+.markdown ul p {
+  @apply mt-0;
+}
+.markdown ol {
+  @apply mt-4 pl-6 list-decimal;
+}
+.markdown ol ol,
+.markdown ol p {
+  @apply mt-0;
+}
+.markdown a {
+  @apply underline;
+}
+.markdown strong {
+  @apply font-bold;
+}

@@ -22,27 +22,25 @@ type Props = {
     id: string
     date: string
     title: string
-    description: string
   }>
 }
 
 const Home = ({ allPosts }: Props) => (
   <Layout isHome>
     <section>
-      <h2>Articles</h2>
-
       <ul>
-        {allPosts.map(({ id, date, title, description }) => (
+        {allPosts.map(({ id, date, title }) => (
           <li key={id}>
-            <article>
-              <h3>
+            <article className="py-4">
+              <p className="mb-1">
+                <Datetime dateString={date} />
+              </p>
+
+              <p>
                 <Link href={`/posts/${id}`}>
-                  <a>
-                    <Datetime dateString={date} /> {title}
-                  </a>
+                  <a className="text-xl underline">{title}</a>
                 </Link>
-              </h3>
-              <p>{description}</p>
+              </p>
             </article>
           </li>
         ))}

@@ -33,19 +33,20 @@ type Props = {
 const Post = ({ postData }: Props) => (
   <Layout title={postData.title} description={postData.description}>
     <section>
-      <p>
+      <p className="mb-2">
         <Datetime dateString={postData.date} />
       </p>
 
-      <h1>{postData.title}</h1>
+      <h1 className="mb-10 text-3xl">{postData.title}</h1>
 
-      <div>
-        <article dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      <div className="mb-10">
+        {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
+        <article className="markdown" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </div>
 
       <div>
         <Link href="/">
-          <a>← Back To Home</a>
+          <a className="underline">← Back To Home</a>
         </Link>
       </div>
     </section>
