@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import remark from 'remark'
 import html from 'remark-html'
+import remarkExternalLinks from 'remark-external-links'
 
 type Post = {
   id: string
@@ -54,7 +55,10 @@ export const getPostData = async (id: string) => {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const matterResult = matter(fileContents)
-  const processedContent = await remark().use(html).process(matterResult.content)
+  const processedContent = await remark()
+    .use(remarkExternalLinks, { target: '_blank', rel: ['nofollow', 'noreferrer'] })
+    .use(html, { sanitize: false })
+    .process(matterResult.content)
   const contentHtml = processedContent.toString()
 
   return {
