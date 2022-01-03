@@ -6,7 +6,7 @@ import { Layout } from '../components/Layout'
 const Post = () => (
   <Layout is404>
     <section>
-      <h1>404 - Page Not Found</h1>
+      <h1 className="py-20 text-3xl">404 - Page Not Found</h1>
 
       <div>
         <Link href="/">

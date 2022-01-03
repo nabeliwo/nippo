@@ -39,7 +39,7 @@ const Post = ({ postData }: Props) => (
 
       <h1 className="mb-10 text-3xl">{postData.title}</h1>
 
-      <div className="mb-10">
+      <div className="mb-20">
         {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
         <article className="markdown" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </div>
