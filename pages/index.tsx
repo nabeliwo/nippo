@@ -1,11 +1,10 @@
-import React from 'react'
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
+import React from 'react'
 
-import { getSortedPostData } from '../lib/posts'
-
-import { Layout } from '../components/Layout'
 import { Datetime } from '../components/Datetime'
+import { Layout } from '../components/Layout'
+import { getSortedPostData } from '../lib/posts'
 
 export const getStaticProps: GetStaticProps = async () => {
   const allPosts = getSortedPostData()
@@ -37,8 +36,8 @@ const Home = ({ allPosts }: Props) => (
               </p>
 
               <p>
-                <Link href={`/posts/${id}`}>
-                  <a className="text-xl underline">{title}</a>
+                <Link href={`/posts/${id}`} className="text-xl underline">
+                  {title}
                 </Link>
               </p>
             </article>

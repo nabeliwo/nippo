@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import React, { ReactNode } from 'react'
 
 import defaultConfig from '../../site.config.json'
 
@@ -45,22 +45,22 @@ export const Layout = ({ title, description, slug, isHome = false, is404 = false
         {is404 && <meta name="robots" content="noindex" />}
       </Head>
 
-      <header className="container py-10 px-3 mx-auto max-w-2xl">
+      <header className="container mx-auto max-w-2xl py-10 px-3">
         {isHome ? (
           <>
             <h1 className="mb-2 text-2xl">{defaultConfig.title}</h1>
             <p>{defaultConfig.description}</p>
           </>
         ) : (
-          <Link href="/">
-            <a className="text-2xl underline">{defaultConfig.title}</a>
+          <Link href="/" className="text-2xl underline">
+            {defaultConfig.title}
           </Link>
         )}
       </header>
 
-      <main className="container px-3 mx-auto max-w-2xl">{children}</main>
+      <main className="container mx-auto max-w-2xl px-3">{children}</main>
 
-      <footer className="container px-3 pt-20 pb-10 mx-auto max-w-2xl">
+      <footer className="container mx-auto max-w-2xl px-3 pt-20 pb-10">
         <p className="mb-2">
           <a className="underline" href="https://nabeliwo.com" target="_blank" rel="noopener noreferrer">
             Portal

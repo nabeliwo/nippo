@@ -1,11 +1,10 @@
-import React from 'react'
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 import Link from 'next/link'
+import React from 'react'
 
-import { getAllPostIds, getPostData } from '../../lib/posts'
-
-import { Layout } from '../../components/Layout'
 import { Datetime } from '../../components/Datetime'
+import { Layout } from '../../components/Layout'
+import { getAllPostIds, getPostData } from '../../lib/posts'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds()
@@ -45,8 +44,8 @@ const Post = ({ postData }: Props) => (
       </div>
 
       <div>
-        <Link href="/">
-          <a className="underline">← Back To Home</a>
+        <Link href="/" className="underline">
+          ← Back To Home
         </Link>
       </div>
     </section>
