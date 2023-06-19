@@ -20,6 +20,7 @@
 }
 .markdown ul {
   @apply mt-4 pl-6 list-disc;
+  @apply leading-relaxed;
 }
 .markdown ul ul,
 .markdown ul p {
