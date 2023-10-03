@@ -77,6 +77,10 @@ export const Layout = ({ title, description, slug, isHome = false, is404 = false
           /{' '}
           <a className="underline" href={`https://twitter.com/${defaultConfig.author}`} target="_blank" rel="noopener noreferrer">
             Twitter
+          </a>{' '}
+          /{' '}
+          <a className="underline" href={`/rss/feed.xml`} target="_blank" rel="noopener noreferrer">
+            RSS
           </a>
         </p>
 
