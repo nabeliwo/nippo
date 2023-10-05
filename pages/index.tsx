@@ -4,9 +4,11 @@ import React from 'react'
 
 import { Datetime } from '../components/Datetime'
 import { Layout } from '../components/Layout'
+import { generateRssFeed } from '../lib/feed'
 import { getSortedPostData } from '../lib/posts'
 
 export const getStaticProps: GetStaticProps = async () => {
+  await generateRssFeed()
   const allPosts = getSortedPostData()
 
   return {

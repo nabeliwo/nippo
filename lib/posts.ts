@@ -14,6 +14,14 @@ type Post = {
 }
 type MatterResultData = Omit<Post, 'id' | 'date'>
 
+type PostForFeed = {
+  id: string
+  contentHtml: string
+  date: string
+  title: string
+  description?: string
+}
+
 const postsDirectory = path.join(process.cwd(), 'posts')
 
 export const getSortedPostData = (): Post[] => {
@@ -68,4 +76,23 @@ export const getPostData = async (id: string) => {
     contentHtml,
     ...(matterResult.data as MatterResultData),
   }
+}
+
+export const getPostDataForFeed = async () => {
+  const allPostsPromise = getSortedPostData().map(async (post) => {
+    const { id, title, description, date } = post
+    const { contentHtml } = await getPostData(id)
+
+    return {
+      id,
+      contentHtml,
+      description,
+      date,
+      title,
+    }
+  })
+
+  const allPosts: PostForFeed[] = await Promise.all(allPostsPromise)
+
+  return allPosts
 }

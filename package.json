@@ -38,6 +38,7 @@
     "eslint-config-next": "^13.1.1",
     "eslint-config-smarthr": "^6.5.0",
     "eslint-plugin-tailwindcss": "^3.8.0",
+    "feed": "^4.2.2",
     "postcss": "^8.4.21",
     "prettier": "^2.8.2",
     "typescript": "^4.9.4"
